@@ -1,0 +1,22 @@
+
+{
+    'roirepus/competitest.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
+    config = function()
+      require('competitest').setup {
+        runner_ui = {
+          interface = "popup",
+        },
+        compile_command = {
+          cpp = { exec = "g++", args = { "-Wall", "-std=c++2b", "$(FNAME)", "-o", "./compiled/$(FNOEXT)" } },
+        },
+        running_directory = "./compiled",
+        running_command = {
+          cpp = { exec = "./compiled/$(FNOEXT)" },
+        },
+        testcases_directory = "./testcases",
+        testcases_use_single_file = true,
+      }
+    end,
+  },
+
