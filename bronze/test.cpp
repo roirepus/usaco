@@ -3,8 +3,6 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	std::vector<int> v={3,4};	
-	cout<<v.empty();
-
+	cout<<abs(-4-(5));
 	return 0;
 }
