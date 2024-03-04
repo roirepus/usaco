@@ -4,6 +4,8 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
+  // freopen("cowsignal.in", "r", stdin);
+  // freopen("cowsignal.out", "w", stdout);
   int m, n, k;
   cin >> m >> n >> k;
   vector<string> v;
@@ -12,22 +14,18 @@ int main(int argc, char *argv[]) {
     cin >> s;
     v.push_back(s);
   }
-
-  vector<string> temp;
-  for (int i = 0; i < n; i++) {
-
-    for (int j = i; j < k + i; j++) {
-      temp[i](k * n, " ");
-      temp[0][j] = v[0][i];
-      temp.push_back(temp[0]);
+  vector<string> temp(m, "");
+  for (int l = 0; l < m; l++) {
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < k; j++) {
+        temp[l] += v[l][i];
+      }
     }
-    v[0] = temp[0];
   }
-
-  for (auto s : temp) {
-    cout << s << '\n';
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < k; j++) {
+      cout << temp[i] << endl;
+    }
   }
-  cout << v[0][0];
-
   return 0;
 }
